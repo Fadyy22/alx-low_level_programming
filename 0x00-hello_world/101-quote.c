@@ -10,6 +10,6 @@ int main(void)
 	/*
 	 * printf - Prints the string inside parentheses
 	 */
-	printf("and that piece of art is useful %c  - Dora Korpar, 2015-10-19%c", '"', '\n');
+	printf("and that piece of art is useful%c - Dora Korpar, 2015-10-19\n", '"');
 	return (1);
 }
