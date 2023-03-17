@@ -5,9 +5,10 @@
  *
  * Return: 0 Always (Success)
  */
-int main (void)
+int main(void)
 {
 	char c;
+
 	c = 'a';
 
 	while (c <= 'z')
