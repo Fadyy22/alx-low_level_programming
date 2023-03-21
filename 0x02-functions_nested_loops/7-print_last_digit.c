@@ -5,18 +5,19 @@
  *
  * @n: Number to print its last digit
  *
- * Return: Always 0
+ * Return: The value of the last digit
  */
 int print_last_digit(int n)
 {
 	if (n >= 0)
 	{	n = n % 10;
 		_putchar(n + 48);
+		return (n + 48);
 	}
 	else
 	{
 		n = (n * -1) % 10;
 		_putchar(n + 48);
+		return (n + 48);
 	}
-	return (0);
 }
