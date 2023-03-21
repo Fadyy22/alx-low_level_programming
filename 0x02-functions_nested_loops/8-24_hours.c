@@ -17,7 +17,7 @@
 			{
 				for (l = 48; l <= 57; l++)
 				{
-					_puthcar(i);
+					_putchar(i);
 					_putchar(j);
 					_putchar(':');
 					_putchar(k);
