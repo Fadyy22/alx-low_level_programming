@@ -7,9 +7,7 @@
  */
 int main(void)
 {
-	int n;
-
-	long int sum;
+	int n, sum;
 
 	n = 1024;
 	sum = 0;
@@ -22,6 +20,6 @@ int main(void)
 			sum = sum + n;
 		}
 	}
-	printf("%li", sum);
+	printf("%d \n", sum);
 	return (0);
 }
