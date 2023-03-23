@@ -1,6 +1,7 @@
 #inlcude "main.h"
 
-/** _isupper - Checks for uppercase char
+/**
+ * _isupper - Checks for uppercase char
  *
  * @c: Char to check
  *
