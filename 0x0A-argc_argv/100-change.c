@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
 			cents -= 5;
 		else if (cents >= 2)
 			cents -= 2;
-		else if (cents >= 1)
+		else
 			cents -= 1;
 		no_coins++;
 	}
 
-	printf("%d", no_coins);
+	printf("%d\n", no_coins);
 	return (0);
 }
