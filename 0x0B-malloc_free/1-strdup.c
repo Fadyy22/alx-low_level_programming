@@ -20,7 +20,7 @@ char *_strdup(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 		;
-	
+
 	scpy = malloc(sizeof(char) * (i + 1));
 
 	if (scpy == NULL)
