@@ -36,6 +36,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	strcon = malloc(sizeof(char) * lstrcon);
 
+	if (strcon == NULL)
+		return (NULL);
+
 	for (i = 0; i < lstrcon; i++)
 	{
 		if (i < ls1)
