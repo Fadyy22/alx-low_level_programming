@@ -5,7 +5,7 @@
  *
  * @separator: string to be printed between the strings
  * @n: number of strings passed to the function
- * 
+ *
  * Return: void
  */
 void print_strings(const char *separator, const unsigned int n, ...)
@@ -19,7 +19,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		string = va_arg(valist, char *);
-	
+
 		if (string)
 			printf("%s", string);
 		else
