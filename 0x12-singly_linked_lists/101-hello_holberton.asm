@@ -1,9 +1,15 @@
-section .data
-msg db 'Hello, Holberton', 0
-section .text
-global main
+SECTION .data
+msg: db 'Hello, Holberton', 0
+fmt: db '%s',10,0
+SECTION .txt
 extern printf
+global main
+
 main:
-push msg
+mov esi, msg
+mov edi, fmt
+mov eax, 0
 call printf
+
+mov eax, 0
 ret
