@@ -12,7 +12,7 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int unit;
-	int to_number, len, weight;
+	int to_int, len, weight;
 
 	unit = 0;
 	weight = 1;
