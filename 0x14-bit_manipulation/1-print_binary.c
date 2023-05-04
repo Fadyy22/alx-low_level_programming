@@ -14,10 +14,10 @@ void print_binary(unsigned long int n)
 
 	flag = 0;
 
-	for (i = 63; i >= 0; i--;)
+	for (i = 63; i >= 0; i--)
 	{
 		x = n >> i;
-		if (n & 1)
+		if (x & 1)
 		{
 			_putchar('1');
 			flag = 1;
@@ -29,6 +29,4 @@ void print_binary(unsigned long int n)
 	}
 	if (!flag)
 		_putchar('0');
-
-	_putchar('\n');
 }
