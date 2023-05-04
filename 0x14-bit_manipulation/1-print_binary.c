@@ -13,7 +13,7 @@ void print_binary(unsigned long int n)
 	unsigned int x;
 
 	flag = 0;
-	x = 1 << 31;
+	x = 1 << 63;
 
 	while (x > 0)
 	{
