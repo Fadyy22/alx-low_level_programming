@@ -12,13 +12,12 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int unit;
-	int converted;
-	int len, weight;
+	int to_number, len, weight;
 
 	unit = 0;
 	weight = 1;
 
-	if(!b)
+	if (!b)
 		return (0);
 
 	for (len = 0; b[len] != '\0'; len++)
@@ -31,8 +30,8 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
-		converted = b[len] - '0';
-		unit = unit + converted * weight;
+		to_int = b[len] - '0';
+		unit = unit + to_int * weight;
 		weight = weight * 2;
 	}
 	return (unit);
