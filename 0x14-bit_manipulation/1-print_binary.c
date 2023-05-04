@@ -9,15 +9,15 @@
  */
 void print_binary(unsigned long int n)
 {
-	int flag;
+	int i, flag;
 	unsigned long int x;
 
 	flag = 0;
-	x = 1 << 31;
 
-	while (x > 0)
+	for (i = 63; i >= 0; i--;)
 	{
-		if (n & x)
+		x = n >> i;
+		if (n & 1)
 		{
 			_putchar('1');
 			flag = 1;
@@ -26,9 +26,7 @@ void print_binary(unsigned long int n)
 		{
 			_putchar('0');
 		}
-		x = x >> 1;
 	}
-
 	if (!flag)
 		_putchar('0');
 
