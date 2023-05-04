@@ -10,7 +10,7 @@
 void print_binary(unsigned long int n)
 {
 	int flag;
-	unsigned int x;
+	unsigned long int x;
 
 	flag = 0;
 	x = 1 << 63;
