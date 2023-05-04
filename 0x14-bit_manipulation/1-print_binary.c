@@ -14,7 +14,7 @@ void print_binary(unsigned long int n)
 
 	x = 1 << 31;
 
-	while (mask > 0)
+	while (x > 0)
 	{
 		if (n & x)
 		{
