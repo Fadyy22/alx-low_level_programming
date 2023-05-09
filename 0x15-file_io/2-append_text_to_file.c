@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * appends text at the end of a file
+ * append_text_to_file - appends text at the end of a file
  *
  * @filename: name of the file
  * @text_content: NULL terminated string to add at the end of the file
@@ -25,7 +25,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (!text_content)
 		text_content = "";
 
-	for (no_letters = 0; text_content[no_letters] != '\0'; no_letters;)
+	for (no_letters = 0; text_content[no_letters] != '\0'; no_letters++)
 		;
 
 	success_write = write(file_d, text_content, no_letters);
