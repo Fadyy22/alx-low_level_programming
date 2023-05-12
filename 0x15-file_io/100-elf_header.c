@@ -166,11 +166,11 @@ void print_elf_osabi(unsigned char *e_ident)
  *
  * Return: void
  */
-void print_elf_type(unsigned int *e_type)
+void print_elf_type(unsigned int e_type)
 {
 	printf("  Type:                              ");
 	if (e_type == ET_NONE)
-		printf("Unknown: %ls\n", e_type);
+		printf("Unknown: %d\n", e_type);
 	else if (e_type == ET_REL)
 		printf("REL (Realocatable file)\n");
 	else if (e_type == ET_EXEC)
@@ -180,7 +180,7 @@ void print_elf_type(unsigned int *e_type)
 	else if (e_type == ET_CORE)
 		printf("REL (Realocatable file)\n");
 	else
-		printf("Unknown: %ls\n", e_type);
+		printf("Unknown: %d\n", e_type);
 }
 
 /**
