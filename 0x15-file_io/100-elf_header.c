@@ -166,8 +166,10 @@ void print_elf_osabi(unsigned char *e_ident)
  *
  * Return: void
  */
-void print_elf_type(unsigned int e_type)
+void print_elf_type(unsigned int e_type, unsigned char *e_ident)
 {
+	if (e_ident[EI_DATA] == EFLDATA2MSB)
+		e_type >>= 8;
 	printf("  Type:                              ");
 	if (e_type == ET_NONE)
 		printf("Unknown: %d\n", e_type);
@@ -259,7 +261,7 @@ int main(int argc, char *argv[])
 	print_elf_data(header->e_ident);
 	print_elf_version(header->e_ident);
 	print_elf_osabi(header->e_ident);
-	print_elf_type(header->e_type);
+	print_elf_type(header->e_type, header->e_ident);
 	print_elf_addr(header->e_entry);
 	return (0);
 }
