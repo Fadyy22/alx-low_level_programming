@@ -262,4 +262,6 @@ int main(int argc, char *argv[])
 	print_elf_osabi(header->e_ident);
 	print_elf_type(header->e_type);
 	print_elf_addr(header->e_entry);
+
+	return (0);
 }
