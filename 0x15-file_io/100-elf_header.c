@@ -174,7 +174,8 @@ void print_elf_addr(unsigned long int e_entry, unsigned char *e_ident)
 {
 	if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("  Entry point address:               %#x\n", (unsigned int)e_entry);
-	printf("  Entry point address:               %#lx\n", e_entry);
+	else
+		printf("  Entry point address:               %#lx\n", e_entry);
 }
 
 
