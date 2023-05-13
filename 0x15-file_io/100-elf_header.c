@@ -163,6 +163,7 @@ void print_elf_osabi(unsigned char *e_ident)
  * print_elf_type - prints type section of the elf file
  *
  * @e_type: file type
+ * @e_ident: pointer to array of magic numbers
  *
  * Return: void
  */
