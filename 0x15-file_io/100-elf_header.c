@@ -61,7 +61,7 @@ void print_elf_class(unsigned char *e_ident)
 	else if (e_ident[4] == ELFCLASS32)
 		printf("ELF32\n");
 	else
-		printf("<unknown %x>\n", e_ident[4]);
+		printf("<unknown: %x>\n", e_ident[4]);
 }
 
 /**
@@ -81,7 +81,8 @@ void print_elf_data(unsigned char *e_ident)
 	else if (e_ident[5] == ELFDATA2MSB)
 		printf("2's complement, big endian\n");
 	else
-		printf("<unknown %x>\n", e_ident[5]);}
+		printf("<unknown: %x>\n", e_ident[5]);
+}
 
 /**
  * print_elf_version - prints version section of the elf file
@@ -130,7 +131,7 @@ void print_elf_osabi(unsigned char *e_ident)
 	else if (e_ident[7] == ELFOSABI_STANDALONE)
 		printf("Standalone App\n");
 	else
-		printf("<unknown %x>\n", e_ident[7]);
+		printf("<unknown: %x>\n", e_ident[7]);
 	printf("  ABI Version:                       %d\n", e_ident[8]);
 }
 
