@@ -55,7 +55,7 @@ void print_elf_class(unsigned char *e_ident)
 {
 	printf("  Class:                             ");
 	if (e_ident[4] == ELFCLASSNONE)
-		printf("This class is invalid\n");
+		printf("none\n");
 	else if (e_ident[4] == ELFCLASS64)
 		printf("ELF64\n");
 	else if (e_ident[4] == ELFCLASS32)
@@ -75,7 +75,7 @@ void print_elf_data(unsigned char *e_ident)
 {
 	printf("  Data:                              ");
 	if (e_ident[5] == ELFDATANONE)
-		printf("Unknown data format\n");
+		printf("none\n");
 	else if (e_ident[5] == ELFDATA2LSB)
 		printf("2's complement, little endian\n");
 	else if (e_ident[5] == ELFDATA2MSB)
@@ -149,9 +149,9 @@ void print_elf_type(unsigned int e_type, unsigned char *e_ident)
 		e_type >>= 8;
 	printf("  Type:                              ");
 	if (e_type == ET_NONE)
-		printf("None (none)");
+		printf("NONE (none)");
 	else if (e_type == ET_REL)
-		printf("REL (Realocatable file)\n");
+		printf("REL (Relocatable file)\n");
 	else if (e_type == ET_EXEC)
 		printf("EXEC (Executable file)\n");
 	else if (e_type == ET_DYN)
