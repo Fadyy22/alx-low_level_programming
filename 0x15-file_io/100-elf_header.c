@@ -168,7 +168,7 @@ void print_elf_osabi(unsigned char *e_ident)
  */
 void print_elf_type(unsigned int e_type, unsigned char *e_ident)
 {
-	if (e_ident[EI_DATA] == EFLDATA2MSB)
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 	printf("  Type:                              ");
 	if (e_type == ET_NONE)
