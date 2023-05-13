@@ -237,7 +237,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
 		exit(98);
 	}
-
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
@@ -262,6 +261,5 @@ int main(int argc, char *argv[])
 	print_elf_osabi(header->e_ident);
 	print_elf_type(header->e_type);
 	print_elf_addr(header->e_entry);
-
 	return (0);
 }
