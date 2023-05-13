@@ -38,13 +38,9 @@ void print_elf_magic(unsigned char *e_ident)
 	{
 		printf("%02x", e_ident[counter]);
 		if (counter == EI_NIDENT - 1)
-		{
 			printf("\n");
-		}
 		else
-		{
 			printf(" ");
-		}
 	}
 }
 
@@ -59,21 +55,13 @@ void print_elf_class(unsigned char *e_ident)
 {
 	printf("  Class:                             ");
 	if (e_ident[4] == ELFCLASSNONE)
-	{
 		printf("This class is invalid\n");
-	}
 	else if (e_ident[4] == ELFCLASS64)
-	{
 		printf("ELF64\n");
-	}
 	else if (e_ident[4] == ELFCLASS32)
-	{
 		printf("ELF32\n");
-	}
 	else
-	{
 		printf("This class is invalid\n");
-	}
 }
 
 /**
@@ -87,21 +75,13 @@ void print_elf_data(unsigned char *e_ident)
 {
 	printf("  Data:                              ");
 	if (e_ident[5] == ELFDATANONE)
-	{
 		printf("Unknown data format\n");
-	}
 	else if (e_ident[5] == ELFDATA2LSB)
-	{
 		printf("2's complement, little endian\n");
-	}
 	else if (e_ident[5] == ELFDATA2MSB)
-	{
 		printf("2's complement, big endian\n");
-	}
 	else
-	{
 		printf("Unknown data format\n");
-	}
 }
 
 /**
@@ -115,13 +95,9 @@ void print_elf_version(unsigned char *e_ident)
 {
 	printf("  Version:                           %d", e_ident[6]);
 	if (e_ident[6] == EV_NONE)
-	{
-		printf("Invalid version\n");
-	}
+		printf("\n");
 	else
-	{
 		printf(" (current)\n");
-	}
 }
 
 /**
@@ -151,9 +127,9 @@ void print_elf_osabi(unsigned char *e_ident)
 	else if (e_ident[7] == ELFOSABI_TRU64)
 		printf("UNIX - TRU64\n");
 	else if (e_ident[7] == ELFOSABI_ARM)
-		printf("ARM architecture\n");
+		printf("ARM\n");
 	else if (e_ident[7] == ELFOSABI_STANDALONE)
-		printf("Stand-alone (embedded)\n");
+		printf("Standalone App\n");
 	else
 		printf("Unknown: %x\n", e_ident[7]);
 	printf("  ABI Version:                       %d\n", e_ident[8]);
@@ -173,7 +149,7 @@ void print_elf_type(unsigned int e_type, unsigned char *e_ident)
 		e_type >>= 8;
 	printf("  Type:                              ");
 	if (e_type == ET_NONE)
-		printf("Unknown: %d\n", e_type);
+		printf("None (none)");
 	else if (e_type == ET_REL)
 		printf("REL (Realocatable file)\n");
 	else if (e_type == ET_EXEC)
@@ -181,7 +157,7 @@ void print_elf_type(unsigned int e_type, unsigned char *e_ident)
 	else if (e_type == ET_DYN)
 		printf("DYN (Shared object file)\n");
 	else if (e_type == ET_CORE)
-		printf("REL (Realocatable file)\n");
+		printf("CORE (Core file)\n");
 	else
 		printf("Unknown: %d\n", e_type);
 }
