@@ -166,11 +166,14 @@ void print_elf_type(unsigned int e_type, unsigned char *e_ident)
  * print_elf_addr - prints addr section of the elf file
  *
  * @e_entry: virtual address
+ * @e_ident: pointer to array of magic numbers
  *
  * Return: void
  */
-void print_elf_addr(unsigned long int e_entry)
+void print_elf_addr(unsigned long int e_entry, unsigned char *e_ident)
 {
+	if (e_ident[EI_CLASS] == ELFCLASS32)
+		printf("  Entry point address:               %#x\n", (unsigned int)e_entry);
 	printf("  Entry point address:               %#lx\n", e_entry);
 }
 
@@ -239,6 +242,6 @@ int main(int argc, char *argv[])
 	print_elf_version(header->e_ident);
 	print_elf_osabi(header->e_ident);
 	print_elf_type(header->e_type, header->e_ident);
-	print_elf_addr(header->e_entry);
+	print_elf_addr(header->e_entry, header->e_ident);
 	return (0);
 }
