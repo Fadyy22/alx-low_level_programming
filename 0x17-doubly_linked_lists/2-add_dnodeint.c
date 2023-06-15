@@ -4,7 +4,7 @@
  * add_dnodeint - adds a new node at the beginning of a dlistint_t list
  *
  * @head: pointer to the head of the double linked list
- * @n: int to be stored in the new linked list
+ * @n: int to be stored in the new node
  *
  * Return: address of the new element, or NULL if it failed
 */
