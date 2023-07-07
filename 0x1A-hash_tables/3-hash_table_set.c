@@ -28,7 +28,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->next = NULL;
 
 	index = key_index((const unsigned char *)key, ht->size);
-	printf("%li\n", index);
 
 	if (ht->array[index] == NULL)
 	{
