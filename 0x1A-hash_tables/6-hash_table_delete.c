@@ -18,19 +18,14 @@ void hash_table_delete(hash_table_t *ht)
 	for (i = 0; i < ht->size; i++)
 	{
 		head = ht->array[i];
-		if (ht->array[i] == NULL)
-			continue;
-		else
+		temp = head;
+		while (temp != NULL)
 		{
-			temp = head;
-			while (temp != NULL)
-			{
-				temp = temp->next;
-				free(head->key);
-				free(head->value);
-				free(head);
-				head = temp;
-			}
+			temp = temp->next;
+			free(head->key);
+			free(head->value);
+			free(head);
+			head = temp;
 		}
 	}
 	free(ht->array);
