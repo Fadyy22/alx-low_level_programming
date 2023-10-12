@@ -29,10 +29,7 @@ int jump_search(int *array, size_t size, int value)
 
 		current += step;
 
-		if (current >= (int)size)
-			break;
-
-	} while (array[current] < value && current < (int)size);
+	} while (current < (int)size && array[current] < value);
 
 	prev = current - step;
 
